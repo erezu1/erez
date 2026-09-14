@@ -267,15 +267,18 @@
       d.dataset.animating = "1";
       body.style.overflow = "hidden";
       const done = () => { body.style.overflow = ""; delete d.dataset.animating; };
+      // settle the state when the animation ends, or after its duration if the browser never
+      // reports the end (e.g. the page is not being rendered), so a toggle can never get stuck
+      const settle = (anim, ms, fn) => { let ran = false; const once = () => { if (!ran) { ran = true; fn(); } }; anim.onfinish = once; anim.oncancel = once; setTimeout(once, ms + 150); };
       if (open) {
         d.open = true;
         const h = body.scrollHeight;
-        body.animate([{ height: "0px", opacity: 0 }, { height: h + "px", opacity: 1 }],
-          { duration: 380, easing: "cubic-bezier(.22,.61,.36,1)" }).onfinish = done;
+        settle(body.animate([{ height: "0px", opacity: 0 }, { height: h + "px", opacity: 1 }],
+          { duration: 380, easing: "cubic-bezier(.22,.61,.36,1)" }), 380, done);
       } else {
         const h = body.getBoundingClientRect().height;
-        body.animate([{ height: h + "px", opacity: 1 }, { height: "0px", opacity: 0 }],
-          { duration: 300, easing: "cubic-bezier(.22,.61,.36,1)" }).onfinish = () => { d.open = false; done(); };
+        settle(body.animate([{ height: h + "px", opacity: 1 }, { height: "0px", opacity: 0 }],
+          { duration: 300, easing: "cubic-bezier(.22,.61,.36,1)" }), 300, () => { d.open = false; done(); });
       }
     }
 
