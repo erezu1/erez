@@ -396,7 +396,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 }
 .pub-title { font-family: var(--serif); font-size: 1.25rem; line-height: var(--line); margin: 0; font-weight: 500; }
 .pub-title a { color: var(--ink); }
-.pub-title a:hover { color: var(--accent); text-decoration: none; }
+.pub-title a:hover { color: var(--accent-2); text-decoration: none; }   /* red: acts within the site (blue is for external links) */
 .pub-authors { color: var(--ink-2); font-size: .95rem; margin: 0; }
 .pub-authors b { color: var(--ink); font-weight: 600; }
 .pub-journal { font-size: .9rem; color: var(--ink-2); font-style: italic; }
@@ -418,7 +418,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 }
 .abstract { margin-top: .5rem; font-size: .92rem; color: var(--ink-2); }
 .abstract summary {
-  cursor: pointer; color: var(--accent); font-size: .85rem; list-style: none; display: inline-flex; align-items: center; gap: .3rem;
+  cursor: pointer; color: var(--accent-2); font-size: .85rem; list-style: none; display: inline-flex; align-items: center; gap: .3rem;
   user-select: none;
 }
 .abstract summary::-webkit-details-marker { display: none; }
@@ -501,13 +501,13 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 }
 .topic-body p { max-width: 62ch; }
 .topic-papers { margin-top: 1rem; }
-.topic-papers h4 { font-family: var(--mono); font-weight: 500; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .4rem; }
+.topic-papers h4 { font-family: var(--mono); font-weight: 500; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-2); margin-bottom: .4rem; }
 .topic-papers ul { list-style: none; margin: 0; padding: 0; }
 .topic-papers li { padding: .3rem 0; border-bottom: 1px dotted var(--rule); font-size: .95rem; display: flex; gap: .6rem; align-items: baseline; }
 .topic-papers li .yr { font-family: var(--mono); font-size: .72rem; color: var(--ink-3); flex: 0 0 3rem; }
 .topic-papers li .t { flex: 1 1 auto; min-width: 0; }
 .topic-papers li a { color: var(--ink); font-family: var(--serif); font-size: 1.05rem; }
-.topic-papers li a:hover { color: var(--accent); }
+.topic-papers li a:hover { color: var(--accent-2); }
 @media (min-width: 820px) {
   .topic { grid-template-columns: 360px 1fr; gap: 3rem; align-items: start; }
   .topic:nth-of-type(even) { grid-template-columns: 1fr 360px; }   /* mirror: same column widths, figure on the right */
