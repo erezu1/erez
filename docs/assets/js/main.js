@@ -185,15 +185,28 @@
           }).join("")}</ul></div>
         </div>
       </section>`).join("");
-    // Mark the topic whose section crosses a line 42% down the viewport (a thin band, so only one at a time).
-    // The mark arrives after a short pause, once the topic has settled in view; leaving cancels it at once.
-    const band = new IntersectionObserver(es => es.forEach(e => {
-      const sec = e.target;
-      clearTimeout(sec._markTimer);
-      if (e.isIntersecting) sec._markTimer = setTimeout(() => sec.classList.add("is-current"), 550);
-      else sec.classList.remove("is-current");
-    }), { rootMargin: "-42% 0px -57.5% 0px", threshold: 0 });
-    $$(".topic").forEach(sec => band.observe(sec));
+    // The current topic is the last one whose title has risen into the top half of the screen, so a
+    // topic is marked only once its title is really up, not while it is still near the bottom. The
+    // titles are sticky, so the previous one stays at the header until the next crosses the middle.
+    // A change takes effect after a short pause, and is cancelled if the scroll position moves back.
+    const sections = $$(".topic"), inTopHalf = new Set();
+    let current = null, pending = null, timer = 0;
+    const settle = () => {
+      let next = null;
+      sections.forEach(s => { if (inTopHalf.has(s)) next = s; });
+      if (next === pending) return;
+      pending = next; clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (current) current.classList.remove("is-current");
+        current = next;
+        if (current) current.classList.add("is-current");
+      }, 500);
+    };
+    const topHalf = new IntersectionObserver(es => {
+      es.forEach(e => { const s = e.target.closest(".topic"); e.isIntersecting ? inTopHalf.add(s) : inTopHalf.delete(s); });
+      settle();
+    }, { rootMargin: "0px 0px -50% 0px", threshold: 0 });
+    sections.forEach(s => { const h2 = s.querySelector("h2"); if (h2) topHalf.observe(h2); });
   }
 
   /* ---------- publications ---------- */
