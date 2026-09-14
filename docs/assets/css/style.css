@@ -286,7 +286,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
 .section-head h2 { margin: 0; }
-.section-head a { font-size: .95rem; white-space: nowrap; color: var(--accent-2); }
+.section-head a { font-size: .95rem; white-space: nowrap; }
 .eyebrow {
   font-family: var(--mono);
   font-size: .72rem;
@@ -341,9 +341,6 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   text-decoration: none !important;
 }
 .chip:hover { transform: translateY(-1px); border-color: var(--accent); }
-a.chip[target="_blank"] { color: var(--accent); }                       /* external */
-a.chip:not([target="_blank"]) { color: var(--accent-2); }               /* stays on the site */
-a.chip:not([target="_blank"]):hover { border-color: var(--accent-2); }
 .chip svg { width: 15px; height: 15px; }
 .chip.selected { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 button.chip { font: inherit; font-size: .9rem; appearance: none; }
@@ -399,7 +396,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 }
 .pub-title { font-family: var(--serif); font-size: 1.25rem; line-height: var(--line); margin: 0; font-weight: 500; }
 .pub-title a { color: var(--ink); }
-.pub-title a:hover { color: var(--accent-2); text-decoration: none; }   /* red: acts within the site (blue is for external links) */
+.pub-title a:hover { color: var(--accent); text-decoration: none; }
 .pub-authors { color: var(--ink-2); font-size: .95rem; margin: 0; }
 .pub-authors b { color: var(--ink); font-weight: 600; }
 .pub-journal { font-size: .9rem; color: var(--ink-2); font-style: italic; }
@@ -411,7 +408,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
   border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-2);
 }
 .pub-links .tag.topic-tag { cursor: pointer; }
-.pub-links .tag.topic-tag:hover { border-color: var(--accent-2); color: var(--accent-2); }
+.pub-links .tag.topic-tag:hover { border-color: var(--accent); color: var(--accent); }
 .cites { font-family: var(--mono); font-size: .75rem; color: var(--ink-3); }
 .cites b { color: var(--ink-2); font-weight: 500; }
 @media (min-width: 720px) {
@@ -421,7 +418,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 }
 .abstract { margin-top: .5rem; font-size: .92rem; color: var(--ink-2); }
 .abstract summary {
-  cursor: pointer; color: var(--accent-2); font-size: .85rem; list-style: none; display: inline-flex; align-items: center; gap: .3rem;
+  cursor: pointer; color: var(--accent); font-size: .85rem; list-style: none; display: inline-flex; align-items: center; gap: .3rem;
   user-select: none;
 }
 .abstract summary::-webkit-details-marker { display: none; }
@@ -510,7 +507,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 .topic-papers li .yr { font-family: var(--mono); font-size: .72rem; color: var(--ink-3); flex: 0 0 3rem; }
 .topic-papers li .t { flex: 1 1 auto; min-width: 0; }
 .topic-papers li a { color: var(--ink); font-family: var(--serif); font-size: 1.05rem; }
-.topic-papers li a:hover { color: var(--accent-2); }
+.topic-papers li a:hover { color: var(--accent); }
 @media (min-width: 820px) {
   .topic { grid-template-columns: 360px 1fr; gap: 3rem; align-items: start; }
   .topic:nth-of-type(even) { grid-template-columns: 1fr 360px; }   /* mirror: same column widths, figure on the right */
