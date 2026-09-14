@@ -60,9 +60,9 @@
       return t ? `<a class="tag topic-tag" href="research.html#${s}">${esc(t.title)}</a>` : "";
     }).join("");
     const links = [
-      p.arxiv_url && `<a href="${p.arxiv_url}" target="_blank" rel="noopener">arXiv:${p.arxiv}</a>`,
-      p.doi && `<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">Journal</a>`,
       p.inspire_url && `<a href="${p.inspire_url}" target="_blank" rel="noopener">INSPIRE</a>`,
+      p.arxiv_url && `<a href="${p.arxiv_url}" target="_blank" rel="noopener">arXiv</a>`,
+      p.doi && `<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">Journal</a>`,
     ].filter(Boolean).join("");
     const titleHref = compact ? `publications.html#p-${p.id}` : `#p-${p.id}`;
     return `<li class="pub reveal" id="p-${p.id}" data-id="${p.id}">
