@@ -228,7 +228,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
 /* links that get a highlighter sweep on hover */
-.section-head a, .topic-papers li a, .topic-card h3 {
+.section-head a, .topic-card h3 {
   background-image: var(--marker);
   background-position: 0 78%;
   background-repeat: no-repeat;
@@ -236,7 +236,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
   transition: background-size .35s var(--ease), color .2s;
 }
-.section-head a:hover, .topic-papers li a:hover, .topic-card:hover h3 { background-size: 100% var(--marker-h); text-decoration: none; }
+.section-head a:hover, .topic-card:hover h3 { background-size: 100% var(--marker-h); text-decoration: none; }
 .topic-card h3 { display: inline-block; }
 /* search hits on the papers page (CSS Custom Highlight API; browsers without it simply show no marks) */
 ::highlight(search) { background-color: var(--highlight); color: inherit; }
