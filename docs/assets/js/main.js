@@ -13,12 +13,19 @@
   /* ---------- theme ---------- */
   const root = document.documentElement;
   const currentTheme = () => root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  // The site follows the device's light/dark setting. The toggle overrides it for this visit only,
+  // and a change of the device setting takes over again immediately.
   $$(".theme-toggle").forEach(btn => btn.addEventListener("click", () => {
     const next = currentTheme() === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    try { localStorage.setItem("theme", next); } catch (e) {}
+    try { sessionStorage.setItem("theme", next); } catch (e) {}
     window.dispatchEvent(new Event("themechange"));
   }));
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    root.removeAttribute("data-theme");
+    try { sessionStorage.removeItem("theme"); } catch (e) {}
+    window.dispatchEvent(new Event("themechange"));
+  });
 
   /* ---------- nav ---------- */
   $$(".site-nav a[data-page]").forEach(a => a.classList.toggle("active", a.dataset.page === page));
