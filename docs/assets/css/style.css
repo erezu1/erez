@@ -29,7 +29,7 @@
   --line: var(--grid-size);          /* text rhythm: one grid step per line of body text */
   --ease: cubic-bezier(.22, .61, .36, 1);
   /* the highlighter stroke used for the active tab, your name, search hits, year labels and hover sweeps */
-  --marker: linear-gradient(transparent 52%, var(--highlight) 52%, var(--highlight) 88%, transparent 88%);
+  --marker: linear-gradient(transparent 30%, var(--highlight) 30%, var(--highlight) 92%, transparent 92%);
   color-scheme: light;
 }
 
