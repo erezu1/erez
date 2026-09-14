@@ -132,8 +132,10 @@
   setText("#research-title", SITE.researchTitle);
   { const key = { home: "home", research: "research", pubs: "publications" }[page]; const t = SITE.titles && SITE.titles[key]; if (t) document.title = t; }
   if ($("#hero-intro")) $("#hero-intro").innerHTML = (SITE.intro || []).map(t => `<p class="lead">${t}</p>`).join("");
-  if ($("#hero-links")) $("#hero-links").innerHTML = (SITE.links || []).map(l =>
+  const chips = list => (list || []).map(l =>
     `<a class="chip" href="${esc(l.url)}"${/^https?:/i.test(l.url) ? ' target="_blank" rel="noopener"' : ""}>${esc(l.label)}</a>`).join("");
+  if ($("#hero-links")) $("#hero-links").innerHTML = chips(SITE.links);
+  if ($("#pub-profile-links")) $("#pub-profile-links").innerHTML = chips(SITE.publicationLinks);
   if ($("#cv-list")) $("#cv-list").innerHTML = (SITE.cv || []).map(e => `<li class="pub reveal">
       <div class="pub-meta"><span>${esc(e.years)}</span></div>
       <div class="pub-body"><h3 class="pub-title">${esc(e.title)}</h3>

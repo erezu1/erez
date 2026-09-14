@@ -321,6 +321,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
 }
 
 .links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+#pub-profile-links { margin: 0 0 1.25rem; }
 .chip {
   display: inline-flex; align-items: center; gap: .4rem;
   padding: .4rem .8rem;

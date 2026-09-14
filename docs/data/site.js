@@ -56,5 +56,19 @@ window.SITE = {
     "home": "Erez Y. Urbach",
     "research": "Research — Erez Y. Urbach",
     "publications": "Publications — Erez Y. Urbach"
-  }
+  },
+  "publicationLinks": [
+    {
+      "label": "INSPIRE",
+      "url": "https://inspirehep.net/authors/1804687"
+    },
+    {
+      "label": "arXiv",
+      "url": "https://arxiv.org/a/urbach_e_1"
+    },
+    {
+      "label": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/author/Erez-Y.-Urbach/103266530"
+    }
+  ]
 };
