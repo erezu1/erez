@@ -184,7 +184,7 @@
           }).join("")}</ul></div>
         </div>
       </section>`).join("");
-    // The current topic is the last one whose title has risen into the top half of the screen, so a
+    // The current topic is the last one whose title has risen into the upper part of the screen, so a
     // topic is marked only once its title is really up, not while it is still near the bottom. The
     // titles are sticky, so the previous one stays at the header until the next crosses the middle.
     // A change takes effect after a short pause, and is cancelled if the scroll position moves back.
@@ -204,7 +204,7 @@
     const topHalf = new IntersectionObserver(es => {
       es.forEach(e => { const s = e.target.closest(".topic"); e.isIntersecting ? inTopHalf.add(s) : inTopHalf.delete(s); });
       settle();
-    }, { rootMargin: "0px 0px -50% 0px", threshold: 0 });
+    }, { rootMargin: "0px 0px -38% 0px", threshold: 0 });   // "up" = the title is above 62% of the screen height
     sections.forEach(s => { const h2 = s.querySelector("h2"); if (h2) topHalf.observe(h2); });
   }
 
