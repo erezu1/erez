@@ -406,6 +406,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 .cites b { color: var(--ink-2); font-weight: 500; }
 @media (min-width: 720px) {
   .pub { grid-template-columns: 7rem 1fr; }
+  .pub.plain { grid-template-columns: 1fr; }   /* entries without the year column */
   .pub-meta { flex-direction: column; gap: .15rem; padding-top: .3rem; }
 }
 .abstract { margin-top: .5rem; font-size: .92rem; color: var(--ink-2); }

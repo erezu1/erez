@@ -65,11 +65,9 @@
       p.doi && `<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">Journal</a>`,
     ].filter(Boolean).join("");
     const titleHref = compact ? `publications.html#p-${p.id}` : `#p-${p.id}`;
-    return `<li class="pub reveal" id="p-${p.id}" data-id="${p.id}">
-      <div class="pub-meta">
-        <span>${p.year}</span>
-        <span class="cites" data-cites="${p.id}">${p.citations ? `<b>${p.citations}</b> citation${p.citations === 1 ? "" : "s"}` : ""}</span>
-      </div>
+    // The year column only appears where there are no year headers (the home page's recent list).
+    return `<li class="pub reveal${compact ? "" : " plain"}" id="p-${p.id}" data-id="${p.id}">
+      ${compact ? `<div class="pub-meta"><span>${p.year}</span></div>` : ""}
       <div class="pub-body">
         <h3 class="pub-title"><a href="${titleHref}"${compact ? "" : ' data-toggle="abstract"'}>${p.title}</a></h3>
         <div class="pub-authors">${fmtAuthors(p.authors)}</div>
