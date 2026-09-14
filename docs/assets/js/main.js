@@ -291,7 +291,6 @@
     for (const p of [vt.ready, vt.finished, vt.updateCallbackDone]) p && p.catch(() => {});
   });
 
-  $$("[data-fetched]").forEach(el => el.textContent = D.fetched || "");
   math(document.body);
   observeReveals();
   if (window.mountAllAnims) mountAllAnims();
