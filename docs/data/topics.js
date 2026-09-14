@@ -7,7 +7,7 @@ window.TOPICS = [
     "lead": "What is the quantum state of our universe?",
     "body": [
       "The early universe is one of the few places where quantum physics and gravity meet in an observable way. Small temperature variations of the cosmic microwave background began as quantum fluctuations, stretched to cosmic size by the expansion of the universe. Treating the universe itself as a quantum system is therefore not only a conceptual question.",
-      "Conceptually, a closed universe is a strange quantum system: it has no outside, no external observer, and no boundary on which a holographic description could live. Which state describes it, and what a measurement inside it means, are questions without settled answers. I am interested in the observables available to an observer in such a universe, and in what they can teach us about the meaning of entropy, and of quantum mechanics itself, in closed universes."
+      "Conceptually, a closed universe is a strange quantum system: it has no outside, no external observer, and no boundary on which a holographic description could live. Which state describes it, and what a measurement inside it means, are questions without settled answers. I am interested in the observables available to an observer in such a universe, and in what they can teach us about the meaning of entropy, and of quantum mechanics itself."
     ],
     "papers": [
       "2505.14771"
