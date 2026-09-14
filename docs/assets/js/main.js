@@ -146,10 +146,13 @@
   /* ---------- home ---------- */
   if (page === "home") {
     // show the name in the header only once the big one has scrolled out of view
-    const heroName = $("#hero-name");
+    // The observer's root is the viewport minus the header strip, so "not intersecting" with the
+    // name above that strip means it has slid behind the header. (Checking against the screen top
+    // instead missed the crossing during slow scrolls.)
+    const heroName = $("#hero-name"), headerH = 56;
     if (heroName) new IntersectionObserver(es => es.forEach(e =>
-      document.body.classList.toggle("show-brand", !e.isIntersecting && e.boundingClientRect.top < 0)),
-      { rootMargin: "-54px 0px 0px 0px", threshold: 0 }).observe(heroName);
+      document.body.classList.toggle("show-brand", !e.isIntersecting && e.boundingClientRect.top < headerH)),
+      { rootMargin: `-${headerH}px 0px 0px 0px`, threshold: 0 }).observe(heroName);
     $("#recent").innerHTML = D.papers.slice(0, 3).map(p => paperHTML(p, { compact: true })).join("");
     $("#topic-cards").innerHTML = TOPICS.map(t => `
       <a class="topic-card reveal" href="research.html#${t.slug}">
