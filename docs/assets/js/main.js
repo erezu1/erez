@@ -182,8 +182,13 @@
         </div>
       </section>`).join("");
     // Mark the topic whose section crosses a line 42% down the viewport (a thin band, so only one at a time).
-    const band = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("is-current", e.isIntersecting)),
-      { rootMargin: "-42% 0px -57.5% 0px", threshold: 0 });
+    // The mark arrives after a short pause, once the topic has settled in view; leaving cancels it at once.
+    const band = new IntersectionObserver(es => es.forEach(e => {
+      const sec = e.target;
+      clearTimeout(sec._markTimer);
+      if (e.isIntersecting) sec._markTimer = setTimeout(() => sec.classList.add("is-current"), 550);
+      else sec.classList.remove("is-current");
+    }), { rootMargin: "-42% 0px -57.5% 0px", threshold: 0 });
     $$(".topic").forEach(sec => band.observe(sec));
   }
 
