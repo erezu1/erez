@@ -341,6 +341,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   text-decoration: none !important;
 }
 .chip:hover { transform: translateY(-1px); border-color: var(--accent); }
+a.chip { color: var(--accent); }   /* link chips read as links; the filter chips (buttons) stay neutral */
 .chip svg { width: 15px; height: 15px; }
 .chip.selected { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 button.chip { font: inherit; font-size: .9rem; appearance: none; }
