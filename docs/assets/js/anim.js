@@ -132,7 +132,9 @@
       age += n;
     }
     function trail(ctx, tr, col, w, h) {
-      const sx = x => w / 2 + x * (w * 0.021), sy = z => h * 0.93 - z * (h * 0.0172);
+      // Lorenz x spans about ±20 and z about 0–50; map that to a box that sits inside the circle.
+      const m = Math.min(w, h);
+      const sx = x => w / 2 + x * (m * 0.0165), sy = z => h / 2 + (25 - z) * (m * 0.0132);
       const CH = 24;  // segments per stroke: the tail fades in chunks, which keeps draw calls low
       for (let i = 1; i < tr.length; i += CH) {
         const end = Math.min(i + CH, tr.length);
