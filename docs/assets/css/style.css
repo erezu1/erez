@@ -258,8 +258,13 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
 }
 
 /* ---------- reveal on scroll ---------- */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
+.reveal {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+  animation: revealFallback .6s var(--ease) 1.6s forwards;   /* if a script ever fails, content still appears */
+}
+.reveal.in { opacity: 1; transform: none; animation: none; }
+@keyframes revealFallback { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
 /* ---------- sections ---------- */
