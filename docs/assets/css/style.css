@@ -29,7 +29,8 @@
   --line: var(--grid-size);          /* text rhythm: one grid step per line of body text */
   --ease: cubic-bezier(.22, .61, .36, 1);
   /* the highlighter stroke used for the active tab, your name, search hits, year labels and hover sweeps */
-  --marker: linear-gradient(transparent 30%, var(--highlight) 30%, var(--highlight) 92%, transparent 92%);
+  --marker: linear-gradient(var(--highlight), var(--highlight));
+  --marker-h: .875rem;               /* stroke height, the same on every text size */
   color-scheme: light;
 }
 
@@ -202,35 +203,40 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   color: var(--ink-2);
   font-size: clamp(.85rem, 3.6vw, .95rem);
   background-image: var(--marker);
+  background-position: 0 78%;
   background-repeat: no-repeat;
-  background-size: 0% 100%;
+  background-size: 0% var(--marker-h);
   transition: color .2s, background-size .3s var(--ease);
 }
 @media (min-width: 480px) {
   .site-nav { gap: .25rem; }
   .site-nav a { padding: .35rem .55rem; }
 }
-.site-nav a:hover { color: var(--ink); text-decoration: none; background-size: 100% 100%; }
-.site-nav a.active { color: var(--ink); background-size: 100% 100%; }
+.site-nav a:hover { color: var(--ink); text-decoration: none; background-size: 100% var(--marker-h); }
+.site-nav a.active { color: var(--ink); background-size: 100% var(--marker-h); }
 /* with a mouse, the marker follows the tab under the pointer; it returns to the current page's tab afterwards */
 @media (hover: hover) {
-  .site-nav:has(a:hover) a.active:not(:hover) { background-size: 0% 100%; }
+  .site-nav:has(a:hover) a.active:not(:hover) { background-size: 0% var(--marker-h); }
 }
 
 /* ---------- highlighter ---------- */
 .mark {
   background-image: var(--marker);
+  background-position: 0 78%;
+  background-repeat: no-repeat;
+  background-size: 100% var(--marker-h);
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
 /* links that get a highlighter sweep on hover */
 .section-head a, .topic-papers li a, .topic-card h3 {
   background-image: var(--marker);
+  background-position: 0 78%;
   background-repeat: no-repeat;
-  background-size: 0% 100%;
+  background-size: 0% var(--marker-h);
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
   transition: background-size .35s var(--ease), color .2s;
 }
-.section-head a:hover, .topic-papers li a:hover, .topic-card:hover h3 { background-size: 100% 100%; text-decoration: none; }
+.section-head a:hover, .topic-papers li a:hover, .topic-card:hover h3 { background-size: 100% var(--marker-h); text-decoration: none; }
 .topic-card h3 { display: inline-block; }
 /* search hits on the papers page (CSS Custom Highlight API; browsers without it simply show no marks) */
 ::highlight(search) { background-color: var(--highlight); color: inherit; }
@@ -481,16 +487,17 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
    The stroke is on an inline span so that it follows each line when a title wraps. */
 .topic-body h2 .t {
   background-image: var(--marker);
+  background-position: 0 78%;
   background-repeat: no-repeat;
-  background-size: 0% 100%;
+  background-size: 0% var(--marker-h);
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
   transition: background-size .55s var(--ease);
 }
-.topic.is-current .topic-body h2 .t { background-size: 100% 100%; }
+.topic.is-current .topic-body h2 .t { background-size: 100% var(--marker-h); }
 /* with a mouse, the marker follows the topic under the pointer and returns to the one in view afterwards */
 @media (hover: hover) {
-  #topics:has(.topic:hover) .topic:not(:hover) .topic-body h2 .t { background-size: 0% 100%; }
-  #topics .topic:hover .topic-body h2 .t { background-size: 100% 100%; }
+  #topics:has(.topic:hover) .topic:not(:hover) .topic-body h2 .t { background-size: 0% var(--marker-h); }
+  #topics .topic:hover .topic-body h2 .t { background-size: 100% var(--marker-h); }
 }
 .topic-body p { max-width: 62ch; }
 .topic-papers { margin-top: 1rem; }

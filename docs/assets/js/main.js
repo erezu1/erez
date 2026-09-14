@@ -163,14 +163,12 @@
 
   /* ---------- research ---------- */
   if (page === "research") {
-    const nn = n => String(n).padStart(2, "0");
     $("#topics").innerHTML = TOPICS.map((t, i) => `
       <section class="topic" id="${t.slug}">
         <figure class="topic-figure reveal">
           <canvas data-anim="${t.anim}" aria-hidden="true"></canvas>
         </figure>
         <div class="topic-body reveal">
-          <div class="eyebrow">${nn(i + 1)} / ${nn(TOPICS.length)}</div>
           <h2><span class="t">${esc(t.title)}</span></h2>
           <p class="lead">${esc(t.lead)}</p>
           ${t.body.map(b => `<p>${b}</p>`).join("")}
