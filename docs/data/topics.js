@@ -35,7 +35,7 @@ window.TOPICS = [
     "lead": "What is spacetime made of?",
     "body": [
       "One of the most surprising lessons of string theory is that quantum gravity can be described by a quantum system with no gravity at all. In such a description, spacetime and the gravitational physics in it are not fundamental. They emerge from the dynamics of an ordinary quantum system.",
-      "This is holography. It gives a precise meaning to the question of what spacetime is made of, and it turns hard questions about gravity into questions about quantum mechanics. I am interested both in how the dictionary between the two descriptions arises, ideally derived rather than guessed, and in using it as a tool to study black holes and cosmology."
+      "This is holography. It gives a precise meaning to the question of what spacetime is made of, and it turns hard questions about gravity into questions about quantum mechanics. Part of my work asks where this correspondence comes from, in cases where the gravitational description can be derived from the quantum system rather than conjectured. I also use holography as a principal tool for the other questions on this page."
     ],
     "papers": [
       "2406.14605",
