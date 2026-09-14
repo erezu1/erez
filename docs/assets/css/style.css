@@ -189,7 +189,6 @@ main { flex: 1; padding-block: 1.5rem 4rem; }
 /* on the home page the name is already large on the page: the header copy appears only once it has scrolled away */
 body[data-page="home"] .brand { transition: opacity .35s var(--ease), transform .35s var(--ease); }
 body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translateY(.45em); pointer-events: none; }
-.brand em, #hero-name em { font-style: italic; color: var(--accent-2); }
 .site-nav {
   display: flex;
   align-items: baseline;
@@ -304,7 +303,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   padding-block: 1rem 0;
 }
 .hero-text p.lead { font-size: 1.05rem; max-width: 58ch; }
-.hero-text .role { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--ink-2); margin: 0 0 var(--line); }
+.hero-text .role { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--accent-2); margin: 0 0 var(--line); }
 .portrait {
   order: -1;                       /* phones: photo first, above the name */
   margin-bottom: 0;
