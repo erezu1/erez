@@ -68,7 +68,6 @@
     return `<li class="pub reveal" id="p-${p.id}" data-id="${p.id}">
       <div class="pub-meta">
         <span>${p.year}</span>
-        ${p.arxiv ? `<span>${p.arxiv}</span>` : ""}
         <span class="cites" data-cites="${p.id}">${p.citations ? `<b>${p.citations}</b> citation${p.citations === 1 ? "" : "s"}` : ""}</span>
       </div>
       <div class="pub-body">
