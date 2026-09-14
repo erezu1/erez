@@ -63,8 +63,8 @@ window.SITE = {
       "url": "https://inspirehep.net/authors/1804687"
     },
     {
-      "label": "arXiv",
-      "url": "https://arxiv.org/a/urbach_e_1"
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=PVQ1fpIAAAAJ"
     },
     {
       "label": "Semantic Scholar",
