@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Erez Y. Urbach</title>
+  <meta name="description" content="Erez Y. Urbach is a theoretical physicist at the University of Amsterdam. His research concerns quantum aspects of black holes and cosmology.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})()</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#f6f3ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1f2926" media="(prefers-color-scheme: dark)">
+</head>
+<body data-page="home">
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="full">Erez <em>Y.</em> Urbach</span><span class="short">Erez Urbach</span><span class="tiny">EU</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="research.html" data-page="research">Research</a>
+      <a href="publications.html" data-page="pubs">Publications</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero">
+    <div class="hero-text reveal in">
+      <!-- Texts come from ../content/site.json — edit them in the local editor (python3 scripts/serve.py, then /admin). -->
+      <div class="eyebrow" id="hero-eyebrow"></div>
+      <h1 id="hero-name">Erez Y. Urbach</h1>
+      <p class="role" id="hero-role"></p>
+      <div id="hero-intro"></div>
+      <div class="links" id="hero-links"></div>
+    </div>
+    <div class="portrait reveal in" aria-label="Portrait">
+      <span>EU</span>
+      <img src="assets/img/portrait.jpg" alt="Erez Y. Urbach">
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="section-head reveal"><h2>Research</h2><a href="research.html">All topics →</a></div>
+    <div class="topic-grid" id="topic-cards"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal"><h2>Recent publications</h2><a href="publications.html">All publications →</a></div>
+    <ul class="pub-list" id="recent"></ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal"><h2>Curriculum vitae</h2><a href="assets/cv.pdf">Full CV (PDF) →</a></div>
+    <ul class="pub-list" id="cv-list"></ul>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Erez Y. Urbach</span>
+    <span>Publication data from <a href="https://inspirehep.net/authors/1804687" target="_blank" rel="noopener">INSPIRE-HEP</a>, last synced <span data-fetched></span></span>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<script src="data/publications.js"></script>
+<script src="data/site.js"></script>
+<script src="data/topics.js"></script>
+<script src="assets/js/anim.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
