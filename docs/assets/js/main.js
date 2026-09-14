@@ -178,7 +178,6 @@
           }).join("")}</ul></div>
         </div>
       </section>`).join("");
-    $("#toc").innerHTML = TOPICS.map(t => `<a class="chip" href="#${t.slug}">${esc(t.title)}</a>`).join("");
     // Mark the topic whose section crosses a line 42% down the viewport (a thin band, so only one at a time).
     const band = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("is-current", e.isIntersecting)),
       { rootMargin: "-42% 0px -57.5% 0px", threshold: 0 });

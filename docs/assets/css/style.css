@@ -461,7 +461,13 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
   background: var(--paper-2);
   box-shadow: var(--shadow);
 }
-.topic-body h2 { margin-bottom: .35rem; }
+.topic-body h2 {
+  /* the title stays under the header while its topic scrolls by */
+  position: sticky; top: 3.3rem; z-index: 5;
+  margin: 0 0 .35rem; padding: .3rem 0;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
 .topic-body .lead { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--ink-2); }
 /* the title of the topic currently in view gets the highlighter; it sweeps away when you move on.
    The stroke is on an inline span so that it follows each line when a title wraps. */
@@ -493,7 +499,6 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
   .topic:nth-of-type(even) .topic-figure { order: 2; }
   .topic-figure { position: sticky; top: 5.5rem; }
 }
-.toc { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 0; }
 
 /* ---------- footer ---------- */
 .site-footer {
