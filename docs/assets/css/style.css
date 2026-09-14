@@ -185,6 +185,9 @@ main { flex: 1; padding-block: 1.5rem 4rem; }
   .theme-toggle svg { width: 16px; height: 16px; }
 }
 .brand:hover { text-decoration: none; }
+/* on the home page the name is already large on the page: the header copy appears only once it has scrolled away */
+body[data-page="home"] .brand { transition: opacity .35s var(--ease), transform .35s var(--ease); }
+body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translateY(.45em); pointer-events: none; }
 .brand em { font-style: italic; color: var(--accent-2); }
 .site-nav {
   display: flex;
@@ -466,6 +469,11 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
   transition: background-size .55s var(--ease);
 }
 .topic.is-current .topic-body h2 .t { background-size: 100% 100%; }
+/* with a mouse, the marker follows the topic under the pointer and returns to the one in view afterwards */
+@media (hover: hover) {
+  #topics:has(.topic:hover) .topic:not(:hover) .topic-body h2 .t { background-size: 0% 100%; }
+  #topics .topic:hover .topic-body h2 .t { background-size: 100% 100%; }
+}
 .topic-body p { max-width: 62ch; }
 .topic-papers { margin-top: 1rem; }
 .topic-papers h4 { font-family: var(--mono); font-weight: 500; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .4rem; }
