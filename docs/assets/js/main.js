@@ -129,7 +129,7 @@
 
   /* ---------- texts from content/site.json ---------- */
   const setText = (sel, v) => { const el = $(sel); if (el && v) el.textContent = v; };
-  setText("#hero-eyebrow", SITE.eyebrow); setText("#hero-role", SITE.role);
+  setText("#hero-role", SITE.role);
   // the name, with a middle initial such as "Y." set in red italics like in the header
   if ($("#hero-name") && SITE.name) $("#hero-name").innerHTML = esc(SITE.name).replace(/\b([A-Z])\.(?=\s)/, "<em>$1.</em>");
   setText("#research-title", SITE.researchTitle);
