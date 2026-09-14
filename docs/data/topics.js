@@ -20,7 +20,7 @@ window.TOPICS = [
     "lead": "What happens to a black hole when it shrinks to the size of a string?",
     "body": [
       "A black hole is usually thought of as pure geometry: a horizon surrounding a region from which nothing escapes. Quantum mechanically, black holes have a temperature and an entropy, and slowly evaporate. As a black hole shrinks, it eventually becomes so small that classical geometry can no longer be trusted, and one has to ask what it has become.",
-      "String theory suggests an answer: the black hole transition into a hot, highly excited string, held together by its own gravity. I study this transition, what it looks like in different situations, and what it can teach us about the microscopic structure of black holes."
+      "String theory suggests an answer: the black hole transitions into a hot, highly excited string, held together by its own gravity. I study this transition, what it looks like in different situations, and what it can teach us about the microscopic structure of black holes."
     ],
     "papers": [
       "2608.21511",
@@ -47,10 +47,10 @@ window.TOPICS = [
     "slug": "quantum-chaos",
     "title": "Quantum chaos",
     "anim": "chaos",
-    "lead": "When does a quantum field theory become chaotic?",
+    "lead": "When does a quantum system become chaotic?",
     "body": [
-      "Chaos is familiar from classical mechanics: a small change in the initial conditions grows exponentially, and prediction soon becomes impossible. Quantum systems, including quantum field theories, can be chaotic as well.",
-      "Black holes turn out to be, in a precise sense, among the most chaotic systems known, which is one reason quantum chaos matters for quantum gravity. I am interested in different avatars of quantum chaos and how quantum systems become chaotic as their couplings are changed."
+      "Chaos is familiar from classical mechanics: a small change in the initial conditions grows exponentially, and prediction soon becomes impossible. Quantum systems can be chaotic as well.",
+      "Black holes turn out to be, in a precise sense, among the most chaotic systems known, which is one reason quantum chaos matters for quantum gravity. I am interested in different avatars of quantum chaos, and in how quantum systems become chaotic as their couplings are changed."
     ],
     "papers": [
       "2207.11980",
