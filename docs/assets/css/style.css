@@ -188,7 +188,7 @@ main { flex: 1; padding-block: 1.5rem 4rem; }
 /* on the home page the name is already large on the page: the header copy appears only once it has scrolled away */
 body[data-page="home"] .brand { transition: opacity .35s var(--ease), transform .35s var(--ease); }
 body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translateY(.45em); pointer-events: none; }
-.brand em { font-style: italic; color: var(--accent-2); }
+.brand em, #hero-name em { font-style: italic; color: var(--accent-2); }
 .site-nav {
   display: flex;
   align-items: center;
@@ -212,6 +212,10 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
 }
 .site-nav a:hover { color: var(--ink); text-decoration: none; background-size: 100% 100%; }
 .site-nav a.active { color: var(--ink); background-size: 100% 100%; }
+/* with a mouse, the marker follows the tab under the pointer; it returns to the current page's tab afterwards */
+@media (hover: hover) {
+  .site-nav:has(a:hover) a.active:not(:hover) { background-size: 0% 100%; }
+}
 
 /* ---------- highlighter ---------- */
 .mark {
