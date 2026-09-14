@@ -228,7 +228,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
 /* links that get a highlighter sweep on hover */
-.section-head a, .topic-card h3 {
+.topic-card h3 {
   background-image: var(--marker);
   background-position: 0 78%;
   background-repeat: no-repeat;
@@ -236,7 +236,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
   transition: background-size .35s var(--ease), color .2s;
 }
-.section-head a:hover, .topic-card:hover h3 { background-size: 100% var(--marker-h); text-decoration: none; }
+.topic-card:hover h3 { background-size: 100% var(--marker-h); text-decoration: none; }
 .topic-card h3 { display: inline-block; }
 /* search hits on the papers page (CSS Custom Highlight API; browsers without it simply show no marks) */
 ::highlight(search) { background-color: var(--highlight); color: inherit; }
@@ -286,7 +286,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
 .section-head h2 { margin: 0; }
-.section-head a { font-size: .95rem; white-space: nowrap; }
+.section-head a { font-size: .95rem; white-space: nowrap; color: var(--accent-2); }
 .eyebrow {
   font-family: var(--mono);
   font-size: .72rem;
@@ -341,6 +341,9 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   text-decoration: none !important;
 }
 .chip:hover { transform: translateY(-1px); border-color: var(--accent); }
+a.chip[target="_blank"] { color: var(--accent); }                       /* external */
+a.chip:not([target="_blank"]) { color: var(--accent-2); }               /* stays on the site */
+a.chip:not([target="_blank"]):hover { border-color: var(--accent-2); }
 .chip svg { width: 15px; height: 15px; }
 .chip.selected { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 button.chip { font: inherit; font-size: .9rem; appearance: none; }
@@ -408,7 +411,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
   border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-2);
 }
 .pub-links .tag.topic-tag { cursor: pointer; }
-.pub-links .tag.topic-tag:hover { border-color: var(--accent); color: var(--accent); }
+.pub-links .tag.topic-tag:hover { border-color: var(--accent-2); color: var(--accent-2); }
 .cites { font-family: var(--mono); font-size: .75rem; color: var(--ink-3); }
 .cites b { color: var(--ink-2); font-weight: 500; }
 @media (min-width: 720px) {
