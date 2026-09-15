@@ -303,7 +303,7 @@ body[data-page="home"]:not(.show-brand) .brand { opacity: 0; transform: translat
   padding-block: 1rem 0;
 }
 .hero-text p.lead { font-size: 1.05rem; max-width: 58ch; }
-.hero-text .role { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--accent-2); margin: 0 0 var(--line); }
+.hero-text .role { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--ink-2); margin: 0 0 var(--line); }
 .portrait {
   order: -1;                       /* phones: photo first, above the name */
   margin-bottom: 0;
@@ -403,6 +403,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 .pub-place { color: var(--ink-2); font-size: .95rem; margin-top: .15rem; }
 .pub-note { color: var(--ink-3); font-size: .85rem; margin-top: .1rem; }
 .pub-links { display: flex; flex-wrap: wrap; gap: .35rem .9rem; margin-top: .35rem; font-size: .85rem; align-items: center; }
+.pub-links a:not(.tag) { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .pub-links .tag {
   font-family: var(--mono); font-size: .7rem; padding: .1rem .5rem;
   border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-2);
@@ -456,10 +457,8 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
   display: grid;
   gap: 1.25rem;
   padding-block: 2.5rem;
-  border-bottom: 1px dashed var(--rule);
   scroll-margin-top: 5rem;
 }
-.topic:last-of-type { border-bottom: 0; }
 .topic-figure {
   width: min(100%, 360px);
   margin: 0 auto;
@@ -506,7 +505,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 .topic-papers li { padding: .3rem 0; border-bottom: 1px dotted var(--rule); font-size: .95rem; display: flex; gap: .6rem; align-items: baseline; }
 .topic-papers li .yr { font-family: var(--mono); font-size: .72rem; color: var(--ink-3); flex: 0 0 3rem; }
 .topic-papers li .t { flex: 1 1 auto; min-width: 0; }
-.topic-papers li a { color: var(--ink); font-family: var(--serif); font-size: 1.05rem; }
+.topic-papers li a { color: var(--ink); font-family: var(--serif); font-size: 1.05rem; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--ink-3); }
 @media (hover: hover) { .topic-papers li a:hover { color: var(--accent); } }   /* hover only where a pointer can hover: taps on phones leave no sticky state */
 @media (min-width: 820px) {
   .topic { grid-template-columns: 360px 1fr; gap: 3rem; align-items: start; }
