@@ -139,8 +139,9 @@ main.container::before {
   main.container::before { left: -1.5rem; }
 }
 
-main { flex: 1; padding-block: 1.5rem 4rem; }
-@media (min-width: 768px) { main { padding-block: 2.5rem 6rem; } }
+main { flex: 1; padding-block: 1.5rem 1.5rem; }
+@media (min-width: 768px) { main { padding-block: 2.5rem 2rem; } }
+main > .section:last-child, main > #topics { margin-bottom: 0; }
 
 /* ---------- header ---------- */
 .site-header {
@@ -456,8 +457,9 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
   display: grid;
   gap: 1.25rem;
   padding-block: 2.5rem;
-  scroll-margin-top: 5rem;
 }
+.topic:last-of-type { padding-bottom: 1rem; }
+.topic { scroll-margin-top: 5rem; }
 .topic-figure {
   width: min(100%, 360px);
   margin: 0 auto;
@@ -516,7 +518,7 @@ button.chip { font: inherit; font-size: .9rem; appearance: none; }
 /* ---------- footer ---------- */
 .site-footer {
   border-top: 1px dashed var(--rule);
-  padding-block: 1.5rem 2.5rem;
+  padding-block: 1rem 1.25rem;
   font-size: .82rem;
   color: var(--ink-3);
 }
